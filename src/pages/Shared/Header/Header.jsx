@@ -13,6 +13,7 @@ const Header = () => {
                             <li><a>Home</a></li>
                             <li><a>Our Chef</a></li>
                             <li><a>Recipes</a></li>
+                            <li><a>Blog</a></li>
                         </ul>
                     </div>
                     <a className="btn btn-ghost normal-case text-xl md:text-4xl lg:text-4xl">Modern Chef Recipe</a>
@@ -22,11 +23,21 @@ const Header = () => {
                         <li><a>Home</a></li>
                         <li><a>Our Chef</a></li>
                         <li><a>Recipes</a></li>
+                        <li><a>Blog</a></li>
                     </ul>
                 </div>
+               
                 <div className="navbar-end">
-                    <a className="btn text-sm md:text-lg lg:text-lg">Join Us</a>
+                    <div className="flex items-center space-x-4">
+                        <a className="btn text-sm md:text-lg lg:text-lg">Login</a>
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                            <div className=" w-12 h-12 rounded-full">
+                                <img src="https://i.ibb.co/sg60Hz8/1.jpg" className="w-full h-full rounded-full" alt="User Avatar" />
+                            </div>
+                        </label>
+                    </div>
                 </div>
+
             </div>
         </div>
     );
