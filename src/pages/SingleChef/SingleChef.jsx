@@ -6,7 +6,7 @@ const SingleChef = ({ selectedChef }) => {
     return (
         <div>
             <div className="card lg:card-side bg-base-100 shadow-xl">
-                <figure><img src={chefPicture} alt="Album" /></figure>
+                <figure className='bg-red-200 w-[50%] h-auto'><img className='' src={chefPicture} alt="Album" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{chefName}</h2>
                     <p>{chefDescription} </p>

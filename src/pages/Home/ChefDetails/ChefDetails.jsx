@@ -6,9 +6,12 @@ const ChefDetails = ({ chef }) => {
     const { id, chefName, chefPicture, yearsOfExperience, likes, recipes } = chef
     return (
         <div>
-            
+
             <div className="card w-96 card-compact bg-base-100 shadow-xl">
-                <figure  ><img className='w-[100%]' src={chefPicture && chefPicture} alt="Shoes" /></figure>
+                {/* <figure  ><img className='w-[100%]' src={chefPicture && chefPicture} alt="Shoes" /></figure> */}
+                <figure className="h-60 md:h-80">
+                    <img className="object-cover w-full h-full" src={chefPicture && chefPicture} alt="Chef" />
+                </figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl ">{chefName}</h2>
                     <p className='text-lg font-semibold'>Experience: {yearsOfExperience}yr </p>
