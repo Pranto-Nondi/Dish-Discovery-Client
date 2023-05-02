@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import SingleChef from '../SingleChef/SingleChef';
+
 
 const RecipeDetails = () => {
-    const [data, setData] = useState([]);
+    const [chefs, setChefs] = useState([]);
     const { id } = useParams()
     console.log(id)
     useEffect(() => {
         fetch(`http://localhost:3000/chefs`)
             .then(res => res.json())
-            .then(data => setData(data))
+            .then(data => setChefs(data))
             .catch(error => console.log(error));
     }, [])
-    console.log(data)
+    const selectedChef = chefs.find(chef => chef.id == id)
+    console.log(selectedChef)
     return (
         <div>
-            this is recipe details
+            <SingleChef selectedChef={selectedChef} />
         </div>
     );
 };
