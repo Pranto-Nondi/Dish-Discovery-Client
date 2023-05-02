@@ -1,25 +1,32 @@
 import React from 'react';
-import { FaThumbsUp } from 'react-icons/fa';
+import { FaArrowLeft, FaThumbsUp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 const SingleChef = ({ selectedChef }) => {
     console.log(selectedChef)
-    const { chefName, chefPicture, yearsOfExperience, chefDescription, likes } = selectedChef || {}
+    const { chefName, chefPicture, yearsOfExperience, chefDescription, likes, recipes } = selectedChef || {}
     return (
-        <div>
-            <div className="card lg:card-side bg-base-100 shadow-xl">
-                <figure className='bg-red-200 w-[50%] h-auto'><img className='' src={chefPicture} alt="Album" /></figure>
+        <div className='px-5 py-5 mx-auto my-auto' >
+            <div className="card lg:card-side bg-base-100 shadow-xl mt-5 p-5 ">
+                <figure className='bg-red-200 w-full md:w-[70%] h-full'><img className='' src={chefPicture} alt="Album" /></figure>
                 <div className="card-body">
-                    <h2 className="card-title">{chefName}</h2>
-                    <p>{chefDescription} </p>
-                    <p>{yearsOfExperience} Years Experience </p>
-                    <div className=' flex justify-center align-bottom'>
+                    <h2 className="card-title text-4xl">{chefName}</h2>
+                    <p className='text-3xl '>{chefDescription} </p>
+                    <p className='text-2xl '>Experience: {yearsOfExperience}Yrs  </p>
+                    <p className='text-xl '> Recipe Items: {recipes?.length}</p>
+                    <div className=' flex justify-center align-center'>
                         <FaThumbsUp className='text-blue-600 text-2xl'></FaThumbsUp>
                         <p className='text-xl pb-1'>&nbsp;&nbsp;{likes} </p>
                     </div>
-                    <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Listen</button>
+                    <div className="card-actions justify-start">
+                        <Link to='/' className=' flex flex-row flex justify-center align-center' >
+                            <FaArrowLeft className='text-blue-600 text-2xl pt-1'></FaArrowLeft>
+                            <p className='text-xl pl-2 '>Go Back</p>
+                        </Link>
+
                     </div>
                 </div>
             </div>
+
         </div>
     );
 };

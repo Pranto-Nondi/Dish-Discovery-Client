@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { FaThumbsUp } from 'react-icons/fa';
 const ChefDetails = ({ chef }) => {
     // console.log(chef)
     const { id, chefName, chefPicture, yearsOfExperience, likes, recipes } = chef
@@ -14,9 +14,13 @@ const ChefDetails = ({ chef }) => {
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl ">{chefName}</h2>
-                    <p className='text-lg font-semibold'>Experience: {yearsOfExperience}yr </p>
-                    <p className='text-md font-semibold'>Recipe Items : {recipes?.length} </p>
-                    <p className='text-sm font-semibold'>likes people :{likes} </p>
+                    <p className='text-xl '>Experience: {yearsOfExperience}yrs </p>
+                    <p className='text-lg '>Recipe Items : {recipes?.length} </p>
+                    {/* <p className='text-sm font-semibold'>likes people :{likes} </p> */}
+                    <div className=' flex justify-center align-bottom'>
+                        <FaThumbsUp className='text-blue-600 text-2xl'></FaThumbsUp>
+                        <p className='text-xl pb-1'>&nbsp;&nbsp;{likes} </p>
+                    </div>
                     <div className="card-actions justify-center">
                         <Link to={`/recipeDetails/${id}`} className="btn btn-primary">Recipe Details</Link>
                     </div>
