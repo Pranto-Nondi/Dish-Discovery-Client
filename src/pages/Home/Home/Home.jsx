@@ -1,6 +1,7 @@
 import React from 'react';
 import bgImg from '../../../assets/bgImg.jpg';
-import ChefCategory from '../ChefCategory/ChefCategory';
+
+import Chefs from '../Chef/Chefs';
 
 const Home = () => {
     return (
@@ -14,7 +15,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <ChefCategory></ChefCategory>
+            <Chefs></Chefs>
         </>
     );
 };
