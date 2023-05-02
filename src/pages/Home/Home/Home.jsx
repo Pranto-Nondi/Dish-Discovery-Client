@@ -1,9 +1,9 @@
 import React from 'react';
-import bgImg from '../../../assets/bgImg.jpg';
 
 import Chefs from '../Chef/Chefs';
 
 const Home = () => {
+    const bgImg = 'https://i.ibb.co/54JFnLQ/bgImg.jpg';
     return (
         <>
             <div className="flex items-center justify-center h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${bgImg})` }}>
