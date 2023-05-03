@@ -31,7 +31,7 @@ const Header = () => {
 
                 <div className="navbar-end">
                     <div className="flex items-center space-x-4">
-                        <a className="btn text-sm md:text-lg lg:text-lg">Login</a>
+                        <Link to='/login'><p className="btn text-sm md:text-lg lg:text-lg">Login</p></Link>
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className=" w-12 h-12 rounded-full">
                                 <img src="https://i.ibb.co/sg60Hz8/1.jpg" className="w-full h-full rounded-full" alt="User Avatar" />

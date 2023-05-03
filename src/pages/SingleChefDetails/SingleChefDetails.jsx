@@ -3,8 +3,6 @@ import {  Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import toast from 'react-hot-toast';
 
-
-
 const SingleChefDetails = ({ recipe }) => {
     const { recipeName, ingredients, cookingMethod, rating } = recipe
     const [showFullMethod, setShowFullMethod] = useState(false);
