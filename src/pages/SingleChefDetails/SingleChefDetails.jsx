@@ -17,7 +17,10 @@ const SingleChefDetails = ({ recipe }) => {
     };
     const handleFavoriteClick = () => {
         setIsFavorited(true);
-        toast.success("Successfully Recipe added to favorites!");
+        toast.success("Successfully Recipe added to favorites!", {
+            duration: 2000,
+            
+            });
     };
     return (
         <div>
