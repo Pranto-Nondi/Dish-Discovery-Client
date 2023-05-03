@@ -8,7 +8,7 @@ const SingleChef = ({ selectedChef }) => {
     return (
         <div className='px-5 py-5 mx-auto my-auto' >
             <div className="card lg:card-side bg-base-100 shadow-xl mt-5 p-5 ">
-                <figure className='bg-red-200 w-full md:w-[70%] h-full'><img className='' src={chefPicture} alt="Album" /></figure>
+                <figure className=' w-full md:w-[70%] h-full'><img className='' src={chefPicture} alt="Album" /></figure>
                 <div className="card-body">
                     <h2 className="card-title text-4xl">{chefName}</h2>
                     <p className='text-3xl '>{chefDescription} </p>
@@ -28,8 +28,11 @@ const SingleChef = ({ selectedChef }) => {
                 </div>
             </div>
             <div>
-                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 mt-5 mx-auto container  '>
-                    {recipes?.map((recipe,index) => <SingleChefDetails key={index}  recipe={recipe} ></SingleChefDetails>)}
+                <h3 className='mt-10 mb-10 text-center text-4xl font-semibold'>Master Chef Recipes</h3>
+                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 mt-5 mx-auto container  
+                '>
+
+                    {recipes?.map((recipe, index) => <SingleChefDetails key={index} recipe={recipe} ></SingleChefDetails>)}
                 </div>
             </div>
         </div>
