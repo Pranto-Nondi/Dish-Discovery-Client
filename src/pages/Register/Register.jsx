@@ -21,7 +21,7 @@ const Register = () => {
         else if (passwordError) {
             e.target.password.focus();
         }
-        
+
         createUser(email, password)
             .then(result => {
                 const signUpUser = result.user
@@ -34,15 +34,15 @@ const Register = () => {
                         setError(error.message)
                     })
 
-                // loggedOut()
-                //     .then(() => {
+                loggedOut()
+                    .then(() => {
 
-                //         navigate(`/login`)
+                        navigate(`/login`)
 
-                //     })
-                //     .catch(error => {
-                //         setError(error.message)
-                //     })
+                    })
+                    .catch(error => {
+                        setError(error.message)
+                    })
                 e.target.reset()
                 setError('')
 

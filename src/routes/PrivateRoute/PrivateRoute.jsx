@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
-const PrivateRoute = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+
+const PrivateRoute = ({ children }) => {
+    const { user, loading } = useContext(AuthContext)
+    const location = useLocation()
+    if (loading) {
+        return (
+          <div
+            className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
+            style={{ zIndex: 9999 }}
+          >
+            <div  style={{ width: '3rem', height: '3rem' }} role='status'>
+            <button className="btn loading">loading</button>
+            </div>
+          </div>
+        );
+      }
+     
+   
+    if (user) {
+        return children
+    }
+
+    return <Navigate to='/login' state={{ from: location }} replace={true} ></Navigate>
 };
 
 export default PrivateRoute;

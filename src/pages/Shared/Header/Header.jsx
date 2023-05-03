@@ -1,7 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { AuthContext } from '../../../Provider/AuthProvider';
+import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
+    const { user, loggedOut, loading } = useContext(AuthContext) || {}
+
+    const activeStyle = { color: 'blue' };
+    const location = useLocation()
+    console.log(loading)
+    console.log(user)
+    const handelLogOut = () => {
+        loggedOut()
+            .then(() => {
+                toast.success(`LogOut SuccessFull`)
+            })
+            .catch(err => {
+                toast.error(err.message)
+            })
+    }
+
     return (
         <div className='sticky top-0 z-10'>
             <div className="navbar bg-gray-300 py-5">
@@ -31,12 +50,39 @@ const Header = () => {
 
                 <div className="navbar-end">
                     <div className="flex items-center space-x-4">
-                        <Link to='/login'><p className="btn text-sm md:text-lg lg:text-lg">Login</p></Link>
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className=" w-12 h-12 rounded-full">
-                                <img src="https://i.ibb.co/sg60Hz8/1.jpg" className="w-full h-full rounded-full" alt="User Avatar" />
-                            </div>
-                        </label>
+                        {!user && !loading && <>
+                            <Link to='/login'><p className="btn text-sm md:text-lg lg:text-lg">Login</p></Link>
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className=" w-12 h-12 rounded-full">
+                                    <img src="https://i.ibb.co/3YZNVgN/pro.png" className="w-full h-full rounded-full" alt="User Avatar" />
+
+                                </div>
+                            </label>
+                        </>
+                        }
+                        {
+                            !user || loading && <>
+
+                                <button className="btn loading">loading</button>
+
+                            </>
+                        }
+                        {
+                            user && !loading && <>
+                                <Link to='/login'><p onClick={handelLogOut} className="btn text-sm md:text-lg lg:text-lg">LogOut</p></Link>
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                    <div className=" w-12 h-12 rounded-full">
+                                        {
+                                            user.photoURL == null && <img src="https://i.ibb.co/3YZNVgN/pro.png" className="w-full h-full rounded-full" alt="User Avatar" />
+                                        }
+                                        {user.photoURL && <img src={user.photoURL} className="w-full h-full rounded-full" alt="User Avatar" />}
+
+
+                                    </div>
+                                </label>
+                            </>
+                        }
+
                     </div>
                 </div>
 
