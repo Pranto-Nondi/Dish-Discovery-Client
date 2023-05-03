@@ -5,13 +5,13 @@ import { AuthContext } from '../../Provider/AuthProvider';
 const Login = () => {
     const [password, setPassword] = useState(null)
     const [email, setEmail] = useState(null)
-    const [show, setShow] = useState(false)
     const [passwordError, setPasswordError] = useState(null)
     const [emailError, setEmailError] = useState(null)
     const [error, setError] = useState('')
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || "/";
+    console.log(from)
     const { logInUser, setLoading } = useContext(AuthContext)
     const handelSignIn = (e) => {
         e.preventDefault()
@@ -98,12 +98,11 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input onChange={handelPasswordField} type={show ? 'text' : 'password'} name='password' placeholder="password" className="input input-bordered" required />
-                                {passwordError && <><span className='text-red-500'> {passwordError}</span></>}
+                                <input onChange={handelPasswordField} type="password" name='password' placeholder="password" className="input input-bordered" required />
+                                {passwordError && <><span className='text-red-500'> {passwordError}
+                                </span></>}
                                 <label className="label">
-                                    <Link onClick={() => setShow(!show)} className='' >{
-                                        show ? 'Hide Password' : 'Show Password'
-                                    }</Link>
+                                    
                                     <Link className="label-text-alt link link-hover">Forgot password?</Link>
                                 </label>
                             </div>

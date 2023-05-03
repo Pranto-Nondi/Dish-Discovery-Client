@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
-import { FaUserCircle } from 'react-icons/fa';
+
 
 const Header = () => {
     const { user, loggedOut, loading } = useContext(AuthContext) || {}

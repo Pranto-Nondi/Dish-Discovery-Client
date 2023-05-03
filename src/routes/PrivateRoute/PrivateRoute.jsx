@@ -12,7 +12,7 @@ const PrivateRoute = ({ children }) => {
             className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'
             style={{ zIndex: 9999 }}
           >
-            <div  style={{ width: '3rem', height: '3rem' }} role='status'>
+            <div>
             <button className="btn loading">loading</button>
             </div>
           </div>
