@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaArrowLeft, FaThumbsUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import SingleChefDetails from '../SingleChefDetails/SingleChefDetails';
 const SingleChef = ({ selectedChef }) => {
     console.log(selectedChef)
     const { chefName, chefPicture, yearsOfExperience, chefDescription, likes, recipes } = selectedChef || {}
@@ -26,7 +27,11 @@ const SingleChef = ({ selectedChef }) => {
                     </div>
                 </div>
             </div>
-
+            <div>
+                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10 mt-5 mx-auto container  '>
+                    {recipes?.map((recipe,index) => <SingleChefDetails key={index}  recipe={recipe} ></SingleChefDetails>)}
+                </div>
+            </div>
         </div>
     );
 };
