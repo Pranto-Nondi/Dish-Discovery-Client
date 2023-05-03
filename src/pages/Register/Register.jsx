@@ -31,7 +31,7 @@ const Register = () => {
                         </form>
                         <p className='mb-4  text-center '>
                             <Link to="/login" className="label-text-alt link link-hover ">
-                                 Have An Account ? Please Login
+                                 Have An Account ? <span className='text-green-600'>Please Login</span>
                             </Link>
                         </p>
                         <div>

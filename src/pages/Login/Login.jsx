@@ -45,7 +45,7 @@ const Login = () => {
                                 </label>
                                 <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                                 <label className="label">
-                                    <Link  className="label-text-alt link link-hover">Forgot password?</Link>
+                                    <Link className="label-text-alt link link-hover">Forgot password?</Link>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
@@ -53,18 +53,18 @@ const Login = () => {
                             </div>
                         </form>
                         <p className='mb-4  text-center'>
-                            <Link to="/register" className="label-text-alt link link-hover">
-                                Don't Have An Account ? Please Register
+                            <Link to="/register" className="label-text-alt link link-hover ">
+                                Don't Have An Account ? <span className='text-green-600'>Please Register</span>
                             </Link>
                         </p>
                         <div>
 
-                            <div className="flex w-full">
-                                <div className="grid h-20 flex-grow card rounded-box place-items-center">
+                            <div className="flex w-full ">
+                                <div className="grid h-20 flex-grow card rounded-box place-items-center ">
                                     <Link> Google Sign In</Link>
                                 </div>
                                 <div className="divider divider-horizontal">OR</div>
-                                <div className="grid h-20 flex-grow card  rounded-box place-items-center">
+                                <div className="grid h-20 flex-grow card  rounded-box place-items-center ">
                                     <Link> Github Sign In</Link>
                                 </div>
                             </div>
