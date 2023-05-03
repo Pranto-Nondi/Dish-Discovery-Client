@@ -5,6 +5,7 @@ import Recipes from "../../layout/Recipes";
 import RecipeDetails from "../../pages/RecipeDetails/RecipeDetails";
 import LoginLayout from "../../layout/LoginLayout";
 import Login from "../../pages/Login/Login";
+import Register from "../../pages/Register/Register";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login />
+            },
+            {
+                path: '/register',
+                element: <Register />
             }
         ]
 
