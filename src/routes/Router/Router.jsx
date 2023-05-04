@@ -7,10 +7,13 @@ import LoginLayout from "../../layout/LoginLayout";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import ErrorPage from "../../pages/ErrorPage/ErrorPage";
+
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Main />,
+        errorElement:<ErrorPage/>,
         children: [
             {
                 path: '/',
