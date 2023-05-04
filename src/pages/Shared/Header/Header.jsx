@@ -9,8 +9,7 @@ const Header = () => {
 
     const activeStyle = { color: 'blue' };
     const location = useLocation()
-    console.log(loading)
-    console.log(user)
+ 
     const handelLogOut = () => {
         loggedOut()
             .then(() => {
@@ -22,8 +21,8 @@ const Header = () => {
     }
 
     return (
-        <div className='sticky top-0 z-10'>
-            <div className="navbar bg-gray-300 py-5">
+        <div className='sticky top-0 z-10 '>
+            <div className="navbar bg-gray-300 p-5 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -36,7 +35,7 @@ const Header = () => {
                             <li><p>About US</p></li>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl md:text-4xl lg:text-4xl">Modern Chef Recipe</a>
+                    <a className="btn btn-ghost normal-case text-md md:text-4xl lg:text-4xl">Modern Chef Recipe</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-2xl">
@@ -75,7 +74,7 @@ const Header = () => {
                                         {
                                             user.photoURL == null && <img src="https://i.ibb.co/3YZNVgN/pro.png" className="w-full h-full rounded-full" alt="User Avatar" />
                                         }
-                                        {user.photoURL && <img src={user.photoURL} className="w-full h-full rounded-full" alt="User Avatar" />}
+                                        {user.photoURL && <img src={user.photoURL} className="w-full h-full rounded-full" alt="User Avatar" title={user.displayName} />}
 
 
                                     </div>

@@ -3,7 +3,7 @@ import React from 'react';
 
 const FavourFood = () => {
     return (
-        <div>
+        <div className='container mx-auto p-3'>
             <h3 className='mt-10 mb-5 text-center text-4xl font-semibold'>Favorite Food</h3>
             <div className='grid grid-cols-1 lg:grid-cols-3 mt-5'>
                 <div className="card w-96 bg-base-100 shadow-xl">
