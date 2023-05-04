@@ -27,7 +27,7 @@ const Blog = () => {
             </div>
             <div tabIndex={0} className="collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
                 <div className="collapse-title text-xl font-medium">
-                    difference between nodejs and express js.
+                    Difference between nodejs and express js.
                 </div>
                 <div className="collapse-content">
                     <p> <span className='font-semibold' >Node.js</span> is a runtime environment for JavaScript that allows you to execute JavaScript code on the server-side. It provides an event-driven, non-blocking I/O model that makes it well-suited for building scalable, high-performance web applications. With Node.js, you can build server-side applications using JavaScript, including web servers, APIs, and command-line tools.</p>
