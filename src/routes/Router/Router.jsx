@@ -19,7 +19,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home />,
-                loader: (() => fetch(`https://modern-chef-recipe-site-server.vercel.app/chefs`))
+                loader: (() => fetch(`https://modern-chef-recipe-site-server-pranto-nondi.vercel.app/chefs`))
             },
             {
                 path:'/blog',
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
             {
                 path: '/recipeDetails/:id',
                 element: <PrivateRoute><RecipeDetails /></PrivateRoute>,
-                loader: ({ params }) => fetch(`https://modern-chef-recipe-site-server.vercel.app/chefs/${params.id}`)
+                loader: ({ params }) => fetch(`https://modern-chef-recipe-site-server-pranto-nondi.vercel.app/chefs/${params.id}`)
 
 
             }

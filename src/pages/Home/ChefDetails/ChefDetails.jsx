@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaThumbsUp } from 'react-icons/fa';
+
 const ChefDetails = ({ chef }) => {
     // console.log(chef)
     const { id, chefName, chefPicture, yearsOfExperience, likes, recipes } = chef

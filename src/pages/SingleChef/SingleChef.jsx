@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaArrowLeft, FaThumbsUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
 import SingleChefDetails from '../SingleChefDetails/SingleChefDetails';
 const SingleChef = ({ selectedChef }) => {
     console.log(selectedChef)
@@ -8,7 +9,11 @@ const SingleChef = ({ selectedChef }) => {
     return (
         <div className='px-5 py-5 mx-auto my-auto' >
             <div className="card lg:card-side bg-base-100 shadow-xl mt-5 p-5 ">
-                <figure className=' w-full md:w-[70%] h-full'><img className='' src={chefPicture} alt="Album" /></figure>
+
+                <figure className=' w-full md:w-[70%] h-full'>
+                    <LazyLoad threshold={0.95} ><img className='' src={chefPicture} alt="Album" /></LazyLoad>
+                </figure>
+
                 <div className="card-body">
                     <h2 className="card-title text-4xl">{chefName}</h2>
                     <p className='text-3xl '>{chefDescription} </p>

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import {  Rating } from '@smastrom/react-rating'
+import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import toast from 'react-hot-toast';
+import LazyLoad from 'react-lazy-load';
 
 const SingleChefDetails = ({ recipe }) => {
-    const { recipeName, ingredients, cookingMethod, rating } = recipe
+    const { recipeImg, recipeName, ingredients, cookingMethod, rating } = recipe
     const [showFullMethod, setShowFullMethod] = useState(false);
     const [isFavorited, setIsFavorited] = useState(false);
     const methodPreview = cookingMethod.slice(0, 50);
@@ -17,15 +18,18 @@ const SingleChefDetails = ({ recipe }) => {
         setIsFavorited(true);
         toast.success("Successfully Recipe added to favorites!", {
             duration: 2000,
-            
-            });
+
+        });
     };
     return (
         <div>
             <div className="card w-96 card-compact bg-base-100 shadow-xl">
-                {/* <figure  ><img className='w-[100%]' src={chefPicture && chefPicture} alt="Shoes" /></figure> */}
+
                 <figure className="h-60 md:h-80">
-                    <img className="object-cover w-full h-full" src='https://i.ibb.co/F5VVVFp/f1.jpg' alt="Chef" />
+                    <LazyLoad height={762} offset={100} once>
+                        <img className="object-cover w-full h-full" src={recipeImg} alt="Chef" />
+                    </LazyLoad>
+                 
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title text-2xl ">{recipeName}</h2>
@@ -51,7 +55,7 @@ const SingleChefDetails = ({ recipe }) => {
                         <p className='text-xl pb-1'>&nbsp;&nbsp;{rating} </p>
                     </div>
                     <div className="card-actions justify-center">
-                        {/* <Link className="btn btn-primary">Favorite</Link> */}
+
                         <button
                             disabled={isFavorited}
                             onClick={handleFavoriteClick}
