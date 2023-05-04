@@ -14,6 +14,7 @@ const Home = () => {
                         <button className="px-6 py-3 sm:px-8 sm:py-4 lg:px-10 lg:py-5 font-medium rounded-full bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">Explore Now</button>
                     </div>
                 </div>
+               
             </div>
            
             <Chefs></Chefs>

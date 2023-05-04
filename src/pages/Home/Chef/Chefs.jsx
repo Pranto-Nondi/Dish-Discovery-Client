@@ -1,6 +1,9 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ChefDetails from '../ChefDetails/ChefDetails';
+import Services from '../Services/Services';
+
+import FavourFood from '../FavouriteFood/FavourFood';
 
 const Chefs = () => {
     const chefs = useLoaderData()
@@ -13,6 +16,13 @@ const Chefs = () => {
                     {chefs.map(chef => <ChefDetails key={chef.id} chef={chef} ></ChefDetails>)}
                 </div>
 
+                <div>
+                    <FavourFood></FavourFood>
+                </div>
+                <div>
+                    <Services></Services>
+
+                </div>
 
             </>
         </div>
