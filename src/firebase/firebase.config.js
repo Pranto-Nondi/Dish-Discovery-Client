@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBHIAgMq_XKM32XZYajAXf4SnQ7ExytKWI",
-  authDomain: "modern-chef-recipe-client.firebaseapp.com",
-  projectId: "modern-chef-recipe-client",
-  storageBucket: "modern-chef-recipe-client.appspot.com",
-  messagingSenderId: "1094223921300",
-  appId: "1:1094223921300:web:b493c8ee3d41f9580ff481"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
