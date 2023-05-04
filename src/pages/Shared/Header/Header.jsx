@@ -14,7 +14,7 @@ const Header = () => {
     const handelLogOut = () => {
         loggedOut()
             .then(() => {
-                
+
             })
             .catch(err => {
                 toast.error(err.message)
@@ -31,7 +31,7 @@ const Header = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-xl ">
                             <Link to='/' > <li><p>Home</p></li></Link>
-                            <li><p>Blog</p></li>
+                            <Link to='/blog' > <li><p>Blog</p></li></Link>
                             <Link ><li><p>Contact</p></li></Link>
                             <li><p>About US</p></li>
                         </ul>
@@ -41,7 +41,7 @@ const Header = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-2xl">
                         <Link to='/' > <li><p>Home</p></li></Link>
-                        <li><p>Blog</p></li>
+                        <Link to='/blog' > <li><p>Blog</p></li></Link>
                         <Link ><li><p>Contact</p></li></Link>
                         <li><p>About US</p></li>
 

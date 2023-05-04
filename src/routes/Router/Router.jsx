@@ -8,6 +8,7 @@ import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import ErrorPage from "../../pages/ErrorPage/ErrorPage";
+import Blog from "../../pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
                 element: <Home />,
                 loader: (() => fetch(`https://modern-chef-recipe-site-server.vercel.app/chefs`))
             },
+            {
+                path:'/blog',
+                element:<Blog/>
+            }
 
 
         ]
