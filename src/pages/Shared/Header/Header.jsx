@@ -14,7 +14,7 @@ const Header = () => {
     const handelLogOut = () => {
         loggedOut()
             .then(() => {
-                toast.success(`LogOut SuccessFull`)
+                
             })
             .catch(err => {
                 toast.error(err.message)

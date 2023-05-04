@@ -12,7 +12,7 @@ const Login = () => {
     const location = useLocation()
     const from = location.state?.from?.pathname || "/";
     console.log(from)
-    const { logInUser, setLoading } = useContext(AuthContext)
+    const { logInUser, setLoading, googleSignIn, githubSignIn } = useContext(AuthContext)
     const handelSignIn = (e) => {
         e.preventDefault()
         setError('')
@@ -26,15 +26,10 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser)
-              
-                if (loggedUser) {
-                    
-                    navigate(from, { replace: true })
-                    e.target.reset()
-                    setError('')
-                    setLoading(false)
-
-                }
+                navigate(from, { replace: true })
+                e.target.reset()
+                setError('')
+                setLoading(false)
 
             })
             .catch(error => {
@@ -43,9 +38,31 @@ const Login = () => {
             })
             .finally(() => {
                 setLoading(false)
-               
+
             })
 
+    }
+    const handelGoogleSign = () => {
+        googleSignIn()
+            .then(result => {
+                navigate(from, { replace: true })
+                console.log(result.user)
+
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
+    }
+    const handelGithubSign = () => {
+        githubSignIn()
+            .then(result => {
+                navigate(from, { replace: true })
+                console.log(result.user)
+
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
     }
     const handelEmailField = (e) => {
         const email = e.target.value
@@ -77,6 +94,7 @@ const Login = () => {
             setPasswordError("");
         }
     }
+
     return (
         <div>
             <div className="hero  bg-base-200">
@@ -102,7 +120,7 @@ const Login = () => {
                                 {passwordError && <><span className='text-red-500'> {passwordError}
                                 </span></>}
                                 <label className="label">
-                                    
+
                                     <Link className="label-text-alt link link-hover">Forgot password?</Link>
                                 </label>
                             </div>
@@ -121,11 +139,11 @@ const Login = () => {
 
                             <div className="flex w-full ">
                                 <div className="grid h-20 flex-grow card rounded-box place-items-center ">
-                                    <Link> Google Sign In</Link>
+                                    <Link onClick={handelGoogleSign} > Google Sign In</Link>
                                 </div>
                                 <div className="divider divider-horizontal">OR</div>
                                 <div className="grid h-20 flex-grow card  rounded-box place-items-center ">
-                                    <Link> Github Sign In</Link>
+                                    <Link onClick={handelGithubSign} > Github Sign In</Link>
                                 </div>
                             </div>
                         </div>
