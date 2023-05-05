@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        backgroundColor: "#F3F4F6",
+        backgroundColor: "#FFFFFF",
         padding: "1rem",
     },
     heading: {
