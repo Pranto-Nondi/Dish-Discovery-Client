@@ -13,7 +13,7 @@ const PrivateRoute = ({ children }) => {
             style={{ zIndex: 9999 }}
           >
             <div>
-            <button className="btn loading">loading</button>
+            <button className="btn loading btn-primary ">loading</button>
             </div>
           </div>
         );
