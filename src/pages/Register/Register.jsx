@@ -25,10 +25,10 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const signUpUser = result.user
-                console.log(signUpUser)
+               
                 setUpdateProfile(signUpUser, nameRef.current.value, urlRef.current.value)
                     .then(() => {
-                        console.log(`profile updated`)
+
                     })
                     .catch(error => {
                         setError(error.message)
@@ -49,7 +49,7 @@ const Register = () => {
 
             })
             .catch(error => {
-                console.log(error.message)
+               
                 setError(error.message)
             })
 

@@ -17,7 +17,7 @@ const Header = () => {
 
             })
             .catch(err => {
-                toast.error(err.message)
+                
             })
     }
 

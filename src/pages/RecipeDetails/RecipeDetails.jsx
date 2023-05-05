@@ -6,7 +6,7 @@ import SingleChef from '../SingleChef/SingleChef';
 const RecipeDetails = () => {
     const [chefs, setChefs] = useState([]);
     const { id } = useParams()
-    console.log(id)
+    
     useEffect(() => {
         fetch(`https://modern-chef-recipe-site-server-pranto-nondi.vercel.app/chefs`)
             .then(res => res.json())
@@ -14,7 +14,6 @@ const RecipeDetails = () => {
             .catch(error => console.log(error));
     }, [])
     const selectedChef = chefs.find(chef => chef.id == id)
-    console.log(selectedChef)
     return (
         <div>
             <SingleChef selectedChef={selectedChef} />

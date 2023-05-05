@@ -11,7 +11,6 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || "/";
-    console.log(from)
     const { logInUser, setLoading, googleSignIn, githubSignIn } = useContext(AuthContext)
     const handelSignIn = (e) => {
         e.preventDefault()
@@ -25,7 +24,7 @@ const Login = () => {
         logInUser(email, password)
             .then(result => {
                 const loggedUser = result.user
-                console.log(loggedUser)
+              
                 navigate(from, { replace: true })
                 e.target.reset()
                 setError('')
@@ -33,7 +32,7 @@ const Login = () => {
 
             })
             .catch(error => {
-                console.log(error.message)
+              
                 setError(error.message)
             })
             .finally(() => {
@@ -46,22 +45,22 @@ const Login = () => {
         googleSignIn()
             .then(result => {
                 navigate(from, { replace: true })
-                console.log(result.user)
+               
 
             })
             .catch(error => {
-                console.log(error.message)
+                
             })
     }
     const handelGithubSign = () => {
         githubSignIn()
             .then(result => {
                 navigate(from, { replace: true })
-                console.log(result.user)
+               
 
             })
             .catch(error => {
-                console.log(error.message)
+               
             })
     }
     const handelEmailField = (e) => {

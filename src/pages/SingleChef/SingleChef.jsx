@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazy-load';
 import SingleChefDetails from '../SingleChefDetails/SingleChefDetails';
 const SingleChef = ({ selectedChef }) => {
-    console.log(selectedChef)
+
     const { chefName, chefPicture, yearsOfExperience, chefDescription, likes, recipes } = selectedChef || {}
     return (
         <div className='px-5 py-5 mx-auto my-auto' >

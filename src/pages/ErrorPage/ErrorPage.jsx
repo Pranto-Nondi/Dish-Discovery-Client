@@ -4,7 +4,7 @@ import { Link, useLocation, useRouteError } from 'react-router-dom'
 const ErrorPage = () => {
     const { error, status, statusText } = useRouteError()
     const loc = useLocation();
-    console.log(loc)
+   
 
     return (
         <section className='flex items-center h-screen p-16 bg-gray-100 text-gray-900'>
