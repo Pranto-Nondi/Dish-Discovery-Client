@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ChefDetails from '../ChefDetails/ChefDetails';
 import Services from '../Services/Services';
-
 import FavourFood from '../FavouriteFood/FavourFood';
 
 const Chefs = () => {
