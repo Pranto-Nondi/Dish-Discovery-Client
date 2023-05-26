@@ -5,7 +5,7 @@ import Services from '../Services/Services';
 import FavourFood from '../FavouriteFood/FavourFood';
 
 const Chefs = () => {
-    const chefs = useLoaderData()
+    const chefs = useLoaderData();
    
     return (
         <div>
