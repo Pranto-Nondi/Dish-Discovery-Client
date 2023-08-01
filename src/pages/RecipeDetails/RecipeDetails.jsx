@@ -8,7 +8,7 @@ const RecipeDetails = () => {
     const { id } = useParams()
     
     useEffect(() => {
-        fetch(`https://modern-chef-recipe-site-server-pranto-nondi.vercel.app/chefs`)
+        fetch(`https://modern-chef-recipe-site-server.vercel.app/chefs`)
             .then(res => res.json())
             .then(data => setChefs(data))
             .catch(error => console.log(error));
